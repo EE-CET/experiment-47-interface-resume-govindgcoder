@@ -1,22 +1,41 @@
 import java.util.Scanner;
 
 interface Resume {
-    // TODO: Declare method void biodata();
+    // Declare method void biodata();
+    public void biodata();
 }
 
 class Teacher implements Resume {
-    // Attributes
-   
 
-    // TODO: Implement biodata() method to print details in the required format
+    // Attributes
+    String name;
+    String qualification;
+    int years;
+
+    // Implement biodata() method to print details in the required format
+    public void biodata() {
+        System.out.print(
+            "Name: " +
+                this.name +
+                "\nQualification: " +
+                this.qualification +
+                "\nExperience: " +
+                this.years+" years"
+        );
+    }
 }
 
 public class InterfaceResume {
-   
-        
-        // TODO: Read input (Name, Qualification, Experience)
+
+    public static void main(String[] args) {
+        // Read input (Name, Qualification, Experience)
         // Assign to teacher object attributes
-        
-        // TODO: Call teacher.biodata()
-    
+        Scanner sc = new Scanner(System.in);
+        Teacher tc = new Teacher();
+        tc.name = sc.nextLine();
+        tc.qualification = sc.nextLine();
+        tc.years = sc.nextInt();
+        // Call teacher.biodata()
+        tc.biodata();
+    }
 }
